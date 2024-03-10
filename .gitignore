@@ -1,0 +1,88 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/node_modules
+
+
+//////////////////////////////////
+{/* Drop Down */}
+        {/* <div className="ms-3">
+          <strong>Stauts :</strong>
+          {item.status}
+          <select
+            // name=""
+            // id=""
+            // disabled={editing ? "" : "disabled"}
+
+            className={
+              todoStatus === "Not Completed"
+                ? "bg-danger ms-2 px-3 py-1 text-white fw-bold"
+                : "bg-success ms-2 px-3 py-1 text-white fw-bold"
+            }
+            value={todoStatus}
+            // onChange={(e) => setTodoStatus(e.target.value)}
+            onSelect={(opt) => {
+              handleStatusChange(opt);
+              // setTodoStatus(e.target.value);
+              // updateStatus(item.id, todoStatus);
+            }}
+          >
+            <option className=" bg-danger ">{item.status}</option>
+            <option value="Not Completed" className=" bg-danger ">
+              pending
+            </option>
+            <option value="completed" className=" bg-success">
+              completed
+            </option>
+          </select>
+        </div> */}
+
+  //////////////////////////////////////////////////
+  const [filter, setFilter] = useState("All");
+  // const [todoStatus, setTodoStatus] = useState("pending");
+  // const [todoStatus, setTodoStatus] = useState();
+
+  // useEffect(() => {
+  //   let taskArray = localStorage.getItem("TodoList");
+  //   // console.log(taskArray);
+  //   if (taskArray) {
+  //     let todos = JSON.parse(taskArray);
+  //     setTodo(todos);
+  //   }
+  // }, [todo]);
+  /////////////////////////////////////////////////////////
+  const addTodos = (newTodo) => {
+    // let templist = todo;
+    // templist.push(newTodo);
+    // localStorage.setItem("TodoList", JSON.stringify(templist));
+    setTodo([...todo, newTodo]);
+  };
+  const deleteTodo = (id) => {
+    setTodo(todo.filter((task) => task.id !== id));
+    // let templist = todo;
+    // templist.splice(index, 1);
+    // localStorage.setItem("TodoList", JSON.stringify(templist));
+
+    // setTodo(templist);
+  };
